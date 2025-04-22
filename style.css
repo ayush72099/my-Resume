@@ -1,42 +1,34 @@
 body {
-    font-family: 'Playfair Display', serif; /* Elegant serif font */
+    font-family: 'Nunito', sans-serif; /* Friendly and vibrant font */
     margin: 0;
-    background: linear-gradient(135deg, #ede7f6, #d1c4e9); /* Soft lavender gradient */
-    color: #4a148c; /* Deep purple text */
-    line-height: 1.9;
+    background: linear-gradient(45deg, #ff6f61, #ffca28, #66bb6a, #1e88e5, #9c27b0); /* Dynamic gradient */
+    background-size: 400% 400%;
+    animation: colorful-bg 15s ease infinite;
+    color: #fff; /* Light text on the colorful background */
+    line-height: 1.8;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    overflow: hidden; /* To contain the subtle background animation */
+    overflow: hidden;
 }
 
-body::before {
-    content: "";
-    position: fixed;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle, rgba(225, 190, 231, 0.3), transparent 60%); /* Soft radial gradient */
-    animation: pulse 10s linear infinite alternate;
-    z-index: -1;
-}
-
-@keyframes pulse {
-    0% { transform: translate(0, 0) scale(1); opacity: 0.6; }
-    100% { transform: translate(25%, 25%) scale(1.1); opacity: 0.9; }
+@keyframes colorful-bg {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
 .container {
-    background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white */
+    background-color: rgba(255, 255, 255, 0.85); /* Semi-transparent white */
     padding: 60px;
-    border-radius: 20px;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2); /* Deeper shadow */
-    width: 95%;
+    border-radius: 25px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3); /* Strong shadow */
+    width: 90%;
     max-width: 950px;
-    backdrop-filter: blur(10px); /* Glass-like effect */
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(15px); /* More intense blur */
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    text-align: left; /* Revert to left alignment for better readability */
 }
 
 header {
@@ -45,25 +37,25 @@ header {
 }
 
 h1 {
-    color: #6a1b9a; /* Richer purple */
-    font-size: 3.5em;
+    color: #f44336; /* Red accent */
+    font-size: 3.8em;
     margin-bottom: 15px;
-    letter-spacing: -1.5px;
-    font-weight: 700;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    letter-spacing: -1.8px;
+    font-weight: 800;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
 }
 
 header p {
-    color: #7b1fa2; /* Another shade of purple */
-    font-size: 1.3em;
+    color: #3f51b5; /* Indigo accent */
+    font-size: 1.4em;
     font-style: italic;
-    font-weight: 400;
+    font-weight: 500;
 }
 
 .section {
-    margin-bottom: 50px;
-    padding-bottom: 35px;
-    border-bottom: 2px dashed #b388ff; /* Elegant dashed border */
+    margin-bottom: 55px;
+    padding-bottom: 40px;
+    border-bottom: 3px dotted #ff9800; /* Orange dotted border */
 }
 
 .section:last-child {
@@ -73,95 +65,102 @@ header p {
 }
 
 h2 {
-    color: #311b92; /* Deepest purple */
-    font-size: 2.5em;
-    margin-bottom: 25px;
+    color: #009688; /* Teal accent */
+    font-size: 2.8em;
+    margin-bottom: 30px;
     position: relative;
-    padding-left: 30px;
+    padding-left: 35px;
     font-weight: 700;
 }
 
 h2::before {
-    content: "\f0c9"; /* List icon */
+    content: "\f03a"; /* Bars icon */
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
-    color: #9c27b0; /* Bright purple */
+    color: #e91e63; /* Pink accent */
     position: absolute;
     left: 0;
-    top: 5px;
-    font-size: 1.2em;
+    top: 3px;
+    font-size: 1.5em;
 }
 
 h3 {
-    color: #5e35b1; /* Medium purple */
-    font-size: 1.5em;
-    margin-top: 18px;
-    margin-bottom: 10px;
+    color: #795548; /* Brown accent */
+    font-size: 1.6em;
+    margin-top: 20px;
+    margin-bottom: 12px;
     font-weight: 600;
 }
 
 .contact-info p, .skill-list li, .experience-item, .education-item {
-    margin-bottom: 18px;
-    color: #673ab7; /* Another purple shade */
-    font-size: 1.1em;
+    margin-bottom: 20px;
+    color: #607d8b; /* Blue-grey text */
+    font-size: 1.15em;
 }
 
 .contact-info a {
-    color: #9c27b0;
+    color: #4caf50; /* Green accent */
     text-decoration: none;
-    font-weight: 600;
+    font-weight: 700;
     transition: color 0.3s ease-in-out, border-bottom 0.3s ease-in-out;
-    border-bottom: 1px dotted transparent;
+    border-bottom: 2px wavy transparent;
 }
 
 .contact-info a:hover {
-    color: #4a148c;
-    border-bottom: 1px dotted #4a148c;
+    color: #2e7d32; /* Darker green on hover */
+    border-bottom: 2px wavy #2e7d32;
 }
 
 .skill-list {
-    padding-left: 35px;
+    padding-left: 40px;
     list-style-type: none;
 }
 
 .skill-list li::before {
-    content: "\f005"; /* Star icon */
+    content: "\f121"; /* Palette icon */
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
-    color: #ffc107; /* Gold for skills */
+    color: #ffeb3b; /* Yellow accent */
     display: inline-block;
-    width: 1em;
-    margin-left: -1em;
-    margin-right: 0.7em;
-    font-size: 0.9em;
+    width: 1.2em;
+    margin-left: -1.2em;
+    margin-right: 0.8em;
+    font-size: 1em;
 }
 
 .experience-details ul, .education-details ul {
-    padding-left: 35px;
-    margin-bottom: 20px;
-    list-style-type: circle;
+    padding-left: 40px;
+    margin-bottom: 25px;
+    list-style-type: square;
 }
 
 .date {
     font-style: italic;
-    color: #ab47bc; /* Light purple */
-    margin-right: 20px;
-    font-size: 1em;
+    color: #9e9e9e; /* Grey */
+    margin-right: 22px;
+    font-size: 1.05em;
 }
 
-/* Elegant Animations */
-@keyframes slideInLeft {
-    from { opacity: 0; transform: translateX(-30px); }
-    to { opacity: 1; transform: translateX(0); }
+/* Vibrant Animations */
+@keyframes pulse-border {
+    0% { border-color: rgba(255, 167, 38, 0.7); } /* Amber */
+    50% { border-color: rgba(63, 81, 181, 0.7); } /* Indigo */
+    100% { border-color: rgba(255, 167, 38, 0.7); }
 }
 
 .container {
-    animation: slideInLeft 0.9s ease-out;
+    animation: pulse-border 5s ease-in-out infinite alternate, fadeInUp 0.8s ease-out;
+    border-width: 3px;
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 .section {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(25px);
     animation: fadeInUp 0.7s ease-out forwards;
     animation-delay: 0.1s;
 }
