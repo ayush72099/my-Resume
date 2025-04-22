@@ -1,167 +1,183 @@
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Playfair Display', serif; /* Elegant serif font */
     margin: 0;
-    background: linear-gradient(135deg, #f0f2f0, #e0e0e0); /* Soft gradient background */
-    color: #333;
+    background: linear-gradient(135deg, #ede7f6, #d1c4e9); /* Soft lavender gradient */
+    color: #4a148c; /* Deep purple text */
+    line-height: 1.9;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    overflow: hidden; /* To contain the subtle background animation */
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(225, 190, 231, 0.3), transparent 60%); /* Soft radial gradient */
+    animation: pulse 10s linear infinite alternate;
+    z-index: -1;
+}
+
+@keyframes pulse {
+    0% { transform: translate(0, 0) scale(1); opacity: 0.6; }
+    100% { transform: translate(25%, 25%) scale(1.1); opacity: 0.9; }
 }
 
 .container {
-    background-color: #fff;
-    padding: 40px;
-    border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* More pronounced shadow */
-    width: 85%;
-    max-width: 960px;
+    background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white */
+    padding: 60px;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2); /* Deeper shadow */
+    width: 95%;
+    max-width: 950px;
+    backdrop-filter: blur(10px); /* Glass-like effect */
+    border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 30px;
-    padding-bottom: 20px;
-    border-bottom: 2px solid #eee;
+    text-align: center;
+    margin-bottom: 50px;
 }
 
-header .profile h1 {
-    color: #2c3e50; /* Darker, professional heading color */
-    font-size: 2.5em;
-    margin-bottom: 5px;
+h1 {
+    color: #6a1b9a; /* Richer purple */
+    font-size: 3.5em;
+    margin-bottom: 15px;
+    letter-spacing: -1.5px;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-header .profile h2 {
-    color: #777;
+header p {
+    color: #7b1fa2; /* Another shade of purple */
+    font-size: 1.3em;
+    font-style: italic;
     font-weight: 400;
-    font-size: 1.2em;
-}
-
-header nav.contact-info {
-    text-align: right;
-}
-
-header nav.contact-info p {
-    margin-bottom: 8px;
-    color: #555;
-}
-
-header nav.contact-info a {
-    color: #007bff; /* Vibrant link color */
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-header nav.contact-info a:hover {
-    color: #0056b3;
 }
 
 .section {
-    margin-bottom: 35px;
+    margin-bottom: 50px;
+    padding-bottom: 35px;
+    border-bottom: 2px dashed #b388ff; /* Elegant dashed border */
 }
 
-.section h2 {
-    color: #007bff;
-    font-size: 1.8em;
-    margin-bottom: 15px;
-    border-bottom: 2px solid #ddd;
-    padding-bottom: 10px;
-    display: flex;
-    align-items: center;
+.section:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
 }
 
-.section h2 i {
-    margin-right: 10px;
-    color: #007bff;
+h2 {
+    color: #311b92; /* Deepest purple */
+    font-size: 2.5em;
+    margin-bottom: 25px;
+    position: relative;
+    padding-left: 30px;
+    font-weight: 700;
 }
 
-.summary p {
-    line-height: 1.6;
-    color: #444;
+h2::before {
+    content: "\f0c9"; /* List icon */
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    color: #9c27b0; /* Bright purple */
+    position: absolute;
+    left: 0;
+    top: 5px;
+    font-size: 1.2em;
+}
+
+h3 {
+    color: #5e35b1; /* Medium purple */
+    font-size: 1.5em;
+    margin-top: 18px;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.contact-info p, .skill-list li, .experience-item, .education-item {
+    margin-bottom: 18px;
+    color: #673ab7; /* Another purple shade */
     font-size: 1.1em;
 }
 
-.education-item {
+.contact-info a {
+    color: #9c27b0;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease-in-out, border-bottom 0.3s ease-in-out;
+    border-bottom: 1px dotted transparent;
+}
+
+.contact-info a:hover {
+    color: #4a148c;
+    border-bottom: 1px dotted #4a148c;
+}
+
+.skill-list {
+    padding-left: 35px;
+    list-style-type: none;
+}
+
+.skill-list li::before {
+    content: "\f005"; /* Star icon */
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    color: #ffc107; /* Gold for skills */
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+    margin-right: 0.7em;
+    font-size: 0.9em;
+}
+
+.experience-details ul, .education-details ul {
+    padding-left: 35px;
     margin-bottom: 20px;
-    padding-left: 20px;
-    border-left: 3px solid #007bff; /* Accent color for education items */
+    list-style-type: circle;
 }
 
-.education-item h3 {
-    color: #333;
-    margin-bottom: 5px;
-    font-size: 1.3em;
-}
-
-.education-item p {
-    color: #666;
-    margin-bottom: 5px;
-}
-
-.education-item .date {
+.date {
     font-style: italic;
-    color: #777;
-    margin-right: 10px;
-    font-size: 0.95em;
+    color: #ab47bc; /* Light purple */
+    margin-right: 20px;
+    font-size: 1em;
 }
 
-.skills ul.skill-list {
-    list-style: none;
-    padding-left: 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Responsive grid */
-    gap: 10px;
+/* Elegant Animations */
+@keyframes slideInLeft {
+    from { opacity: 0; transform: translateX(-30px); }
+    to { opacity: 1; transform: translateX(0); }
 }
 
-.skills ul.skill-list li {
-    background-color: #f9f9f9;
-    border: 1px solid #eee;
-    padding: 10px 15px;
-    border-radius: 6px;
-    color: #555;
-    display: flex;
-    align-items: center;
+.container {
+    animation: slideInLeft 0.9s ease-out;
 }
 
-.skills ul.skill-list li i {
-    margin-right: 8px;
-    color: #007bff;
+.section {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.7s ease-out forwards;
+    animation-delay: 0.1s;
 }
 
-.experience-item {
-    margin-bottom: 25px;
-    padding-left: 20px;
-    border-left: 3px solid #28a745; /* Different accent color for experience */
+.section:nth-child(2) {
+    animation-delay: 0.2s;
 }
 
-.experience-item h3 {
-    color: #333;
-    margin-bottom: 8px;
-    font-size: 1.3em;
+.section:nth-child(3) {
+    animation-delay: 0.3s;
 }
 
-.experience-item .date {
-    font-style: italic;
-    color: #777;
-    margin-right: 10px;
-    font-size: 0.95em;
+.section:nth-child(4) {
+    animation-delay: 0.4s;
 }
 
-.experience-item ul {
-    list-style: none;
-    padding-left: 20px;
-}
-
-.experience-item ul li {
-    color: #555;
-    margin-bottom: 8px;
-    display: flex;
-    align-items: center;
-}
-
-.experience-item ul li i {
-    margin-right: 10px;
-    color: #28a745;
+.section:nth-child(5) {
+    animation-delay: 0.5s;
 }
